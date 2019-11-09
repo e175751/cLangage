@@ -21,8 +21,12 @@ int main(){
         case '/':
             result = Div(num1, num2);
             break;
+        case 'p':
+            result = Fac(num1);
+            break;
         default:
             printf("hoge");
+            break;
     }
     printf("結果は:%d",result);
     return 0;
@@ -45,4 +49,12 @@ int Div(int num1, int num2) {
         return 0;
     }
     return num1 / num2;
+}
+
+int Fac(int num1){
+    if (num1 == 1){
+        return 1;
+    }
+    num1 = num1*Fac(num1-1);
+    return num1;
 }
